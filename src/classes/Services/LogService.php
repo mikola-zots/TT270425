@@ -11,7 +11,7 @@ class LogService{
         $this->logPath = $this->rootFolder . '/logs/log.txt';
     }
 
-    // write log
+    // clear log
     public function clearLog(){        
         file_put_contents($this->logPath, "");
     }
