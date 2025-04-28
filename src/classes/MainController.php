@@ -33,11 +33,6 @@ class MainController
         $this->data=new DataService($env, $this->log);
         
         $this->rootFolder = getcwd();
-        
-        exec('mkdir -p '. $this->rootFolder.'data');
-        exec('mkdir -p '. $this->rootFolder.'logs');
-        exec('mkdir -p '. $this->rootFolder.'tmp');
-        
         $this->onReloadMode=!$this->data->checkDataAge();
     }
 
