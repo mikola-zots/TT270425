@@ -9,7 +9,7 @@ class DataService
     public function __construct($env)
     { 
         $this->rootFolder = getcwd();
-        $this->env = $env;
+        $this->env = $env;        
     }
 
     // get data from file
@@ -61,6 +61,9 @@ class DataService
     // copy part of file to another file
     public function copyDataPart($filePath,$firstRowsCount)
     {
+        if(!file_exists($this->rootFolder.'data')) mkdir($this->rootFolder.'data', 0775);        
+        if(!file_exists($this->rootFolder.'tmp')) mkdir($this->rootFolder.'tmp', 0775);
+
         $in = fopen($filePath, 'r');
         $out = fopen($this->rootFolder.$this->env['DATA_PATH'], 'w');
 
