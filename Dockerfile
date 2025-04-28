@@ -7,6 +7,10 @@ COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 COPY src/ /var/www/html/
 
+RUN mkdir -p /var/www/html/tmp
+RUN mkdir -p /var/www/html/logs
+RUN mkdir -p /var/www/html/data
+
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R -f 775 /var/www/html
 
