@@ -34,6 +34,7 @@ class MainController
         
         $this->rootFolder = getcwd();
         $this->onReloadMode=!$this->data->checkDataAge();
+        if(!file_exists($this->rootFolder.'tmp')) mkdir($this->rootFolder.'tmp', 0775);
     }
 
     // entry point
