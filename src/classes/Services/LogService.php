@@ -9,8 +9,7 @@ class LogService{
     public function __construct() {
         $this->rootFolder = getcwd();
         $this->logPath = $this->rootFolder . '/logs/log.txt';
-        if(!file_exists($this->rootFolder.'data')) mkdir($this->rootFolder.'logs', 0775);
-        if(!file_exists($$this->logPath)) exec("touch ".$this->logPath);
+        if(!file_exists($this->rootFolder.'/logs')) mkdir($this->rootFolder.'/logs', 0775);
     }
 
     // clear log
